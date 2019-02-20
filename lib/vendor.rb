@@ -6,28 +6,18 @@ class Vendor
 
   def initialize(name)
     @name = name
-    @inventory = {}
+    @inventory = Hash.new(0) #gets rid of nil, returns 0
   end
 
   def stock(key, new_value)
-    @inventory[key] = new_value
-    #take in a Key and value Arg
-    #create a new hash with Key Value pair
-    #if the next key value arg has the same key, add the sum of the values
-    if @inventory.key == key
-
-      return @inventory.values.map do |value|
-        value += new_value
-      end
-    end
+    @inventory[key] += new_value
   end
 
-  def check_stock(key)
-    @inventory.include?(key)
-    if @inventory.values.empty? == true
-      return 0
+  def check_stock(item)
+    if inventory[item].nil?
+      0
     else
-      return @inventory.values
+      @inventory[item]
     end
   end
 
