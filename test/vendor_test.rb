@@ -27,8 +27,7 @@ class VendorTest < Minitest::Test
     @vendor = Vendor.new("Rocky Mountain Fresh")
     assert_equal 0, @vendor.check_stock("Peaches")
     end
-
-
+  
   def test_stock_adds_item
     @vendor = Vendor.new("Rocky Mountain Fresh")
     @vendor.stock("Peaches", 30)
