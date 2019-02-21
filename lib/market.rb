@@ -18,10 +18,12 @@ class Market
   end
 
   def vendors_that_sell(item_arg)
-    sellers = @vendors.group_by do |vendor_name, items_sold|
-      items_sold.inventory == items_arg
+    sellers = @vendors.find_all do |items_sold|
+      items_sold.inventory.include?(item_arg)
     end
     sellers
   end
+
+
 
 end

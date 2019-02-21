@@ -50,7 +50,6 @@ class MarketTest < Minitest::Test
     @vendor_2.stock("Banana Nice Cream", 50)
     @vendor_2.stock("Peach-Raspberry Nice Cream", 25)
     @vendor_3.stock("Peaches", 65)
-binding.pry
     expected = [@vendor_1, @vendor_3]
     assert_equal expected, @market.vendors_that_sell("Peaches")
   end
