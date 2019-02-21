@@ -24,6 +24,13 @@ class Market
     sellers
   end
 
+  def sorted_item_list
+  list =  @vendors.map do |items_sold|
+      for_sale = items_sold.inventory
+        for_sale.keys
+    end
+    list.flatten.uniq.sort
+  end
 
 
 end
